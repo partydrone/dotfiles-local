@@ -1,0 +1,55 @@
+alias back="cd ~-"
+alias h="history"
+alias ll="ls -aFGl"
+alias up="cd .."
+
+# Redefine commands to add options
+alias cp="cp -i"
+alias df="df -h"
+alias du="du -h"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# Docker commands
+alias dc="docker-compose"
+alias dcb="docker-compose build"
+# alias dcd="docker-compose down --remove-orphans"
+alias dce="docker-compose exec"
+alias dcl="docker-compose logs -f"
+alias dcp="docker-compose ps"
+alias dcr="docker-compose run --rm"
+alias dcu="docker-compose up -d"
+
+# docker-sync gem commands
+alias ds="docker-sync"
+
+# Kubernetes commands
+alias kc="kubectl"
+alias kcc="kubectl create"
+alias kcd="kubectl delete"
+alias kcr="kubectl run"
+alias kcs="kubectl set"
+alias kcg="kubectl get"
+alias kct="kubectl top"
+
+# Docker Compose functions
+dcd () {
+  if (( $# == 0 ))
+  then
+    docker-compose down --remove-orphans
+  else
+    dc stop $@
+    dc rm $@
+  fi
+}
+
+dcdu () {
+  if (( $# == 0 ))
+  then
+    echo usage: dcdu service-name …
+  else
+    dc stop $@
+    dc rm $@
+    dcu $@
+  fi
+}

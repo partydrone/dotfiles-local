@@ -1,0 +1,2 @@
+# Grep anywhere with ^G
+bindkey -s '^G' ' | grep '

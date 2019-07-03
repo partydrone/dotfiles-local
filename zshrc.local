@@ -1,0 +1,11 @@
+# use custom prompt character for git repos
+function prompt_char {
+  git branch >/dev/null 2>/dev/null && echo '±' && return
+  # ▸→>
+  echo '→'
+}
+
+# override shell prompt
+export PS1='
+╭  %{$fg_bold[cyan]%}%w %*%{$reset_color%} as %{$fg_bold[magenta]%}%n%{$reset_color%} on %{$fg_bold[yellow]%}%m%{$reset_color%} in %{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)
+╰ %(!.#.$(prompt_char)) '
