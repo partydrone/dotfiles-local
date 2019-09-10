@@ -9,3 +9,5 @@ function prompt_char {
 export PS1='
 ╭  %{$fg_bold[cyan]%}%w %*%{$reset_color%} as %{$fg_bold[magenta]%}%n%{$reset_color%} on %{$fg_bold[yellow]%}%m%{$reset_color%} in %{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)
 ╰ %(!.#.$(prompt_char)) '
+
+eval "$(rbenv init -)"
