@@ -21,3 +21,5 @@
 [user]
   name = Andrew Porter
   email = partydrone@icloud.com
+[pull]
+  rebase = true
