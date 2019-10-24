@@ -53,3 +53,12 @@ dcdu () {
     dcu $@
   fi
 }
+
+dct () {
+  if [ -z "$3" ]
+  then
+    dcr $1 rake test TEST=$2 TESTOPTS="--name='$3'"
+  else
+    dcr $1 rake test TEST=$2
+  fi
+}
