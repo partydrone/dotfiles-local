@@ -55,7 +55,7 @@ dcdu () {
 }
 
 dct () {
-  if [ -z "$3" ]
+  if [[ $3 ]]
   then
     dcr $1 rake test TEST=$2 TESTOPTS="--name='$3'"
   else
