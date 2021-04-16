@@ -11,14 +11,14 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 # Docker commands
-alias dc="docker-compose"
-alias dcb="docker-compose build"
-# alias dcd="docker-compose down --remove-orphans"
-alias dce="docker-compose exec"
-alias dcl="docker-compose logs -f"
-alias dcp="docker-compose ps"
-alias dcr="docker-compose run --rm"
-alias dcu="docker-compose up -d"
+alias dc="docker compose"
+alias dcb="docker compose build"
+# alias dcd="docker compose down --remove-orphans"
+alias dce="docker compose exec"
+alias dcl="docker compose logs -f"
+alias dcp="docker compose ps"
+alias dcr="docker compose run --rm"
+alias dcu="docker compose up -d"
 
 # docker-sync gem commands
 alias ds="docker-sync"
@@ -36,7 +36,7 @@ alias kct="kubectl top"
 dcd () {
   if (( $# == 0 ))
   then
-    docker-compose down --remove-orphans
+    docker compose down --remove-orphans
   else
     dc stop $@
     dc rm $@
