@@ -10,18 +10,23 @@ alias du="du -h"
 alias mv="mv -i"
 alias rm="rm -i"
 
-# Docker commands
+# Docker Compose commands
 alias dc="docker compose"
 alias dcb="docker compose build"
-# alias dcd="docker compose down --remove-orphans"
 alias dce="docker compose exec"
 alias dcl="docker compose logs -f"
 alias dcp="docker compose ps"
 alias dcr="docker compose run --rm"
 alias dcu="docker compose up -d"
 
-# docker-sync gem commands
-alias ds="docker-sync"
+# Mutagen Compose wrapper commands
+alias mc="mutagen compose"
+alias mcb="mutagen compose build"
+alias mcd="mutagen compose down"
+alias mce="mutagen compose exec"
+alias mcl="mutagen compose logs -f"
+alias mcp="mutagen compose ps"
+alias mcu="mutagen compose up -d"
 
 # Kubernetes commands
 alias kc="kubectl"
