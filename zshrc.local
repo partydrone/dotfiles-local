@@ -11,7 +11,7 @@ export PS1='
 ╰ %(!.#.$(prompt_char)) '
 
 # Add tab completion for 1Password CLI
-eval “$(op completion zsh)”; compdef _op op
+eval "$(op completion zsh)"; compdef _op op
 
 # Add tab completion for git-lfs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -20,3 +20,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
+# Create environment variables from 1Password items
+if command -v op &> /dev/null
+then
+  export CR_PAT=`op read "op://Personal/GitHub/Personal access tokens/For package management" --account partydrone`
+fi
