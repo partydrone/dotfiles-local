@@ -43,27 +43,25 @@ dcd () {
   then
     docker compose down --remove-orphans
   else
-    dc stop $@
-    dc rm $@
+    docker compose rm -s $@
   fi
 }
 
 dcdu () {
   if (( $# == 0 ))
   then
-    echo usage: dcdu service-name …
+    echo usage: dcdu [SERVICE…]
   else
-    dc stop $@
-    dc rm $@
-    dcu $@
+    docker compose rm -f -s $@
+    docker compose up -d $@
   fi
 }
 
 dct () {
   if [[ $3 ]]
   then
-    dcr $1 rake test TEST=$2 TESTOPTS="--name='$3'"
+    docker compose run --rm $1 rake test TEST=$2 TESTOPTS="--name='$3'"
   else
-    dcr $1 rake test TEST=$2
+    docker compose run --rm $1 rake test TEST=$2
   fi
 }
