@@ -24,5 +24,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 # Create environment variables from 1Password items
 if command -v op &> /dev/null
 then
-  export CR_PAT=`op read "op://Personal/GitHub/Personal access tokens/For package management" --account partydrone`
+  export CR_PAT=`op read "op://Personal/GitHub/Personal access tokens/For package management" --account partydrone --cache -f`
 fi
