@@ -19,23 +19,8 @@ alias dcp="docker compose ps"
 alias dcr="docker compose run --rm"
 alias dcu="docker compose up -d"
 
-# Mutagen Compose wrapper commands
-alias mc="mutagen compose"
-alias mcb="mutagen compose build"
-alias mcd="mutagen compose down"
-alias mce="mutagen compose exec"
-alias mcl="mutagen compose logs -f"
-alias mcp="mutagen compose ps"
-alias mcu="mutagen compose up -d"
-
 # Kubernetes commands
 alias kc="kubectl"
-alias kcc="kubectl create"
-alias kcd="kubectl delete"
-alias kcr="kubectl run"
-alias kcs="kubectl set"
-alias kcg="kubectl get"
-alias kct="kubectl top"
 
 # Docker Compose functions
 dcd () {
@@ -54,14 +39,5 @@ dcdu () {
   else
     docker compose rm -f -s $@
     docker compose up -d $@
-  fi
-}
-
-dct () {
-  if [[ $3 ]]
-  then
-    docker compose run --rm $1 rake test TEST=$2 TESTOPTS="--name='$3'"
-  else
-    docker compose run --rm $1 rake test TEST=$2
   fi
 }
