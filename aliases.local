@@ -21,6 +21,7 @@ alias dcu="docker compose up -d"
 
 # Kubernetes commands
 alias kc="kubectl"
+alias kn="kubectl config set-context --current --namespace"
 
 # Docker Compose functions
 dcd () {
